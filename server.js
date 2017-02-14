@@ -3,7 +3,7 @@ var express =  require('express');
 var cors = require('cors');
 var express = require("express");
 var path = require("path");
-var db_1 = require("./db");
+var db_1 = require("./data/db");
 db_1.default.connect();
 const app = express();
 app.use(cors());
