@@ -1,19 +1,26 @@
-
 "use strict";
-const jData = '/../../data/';
-const express = require("express");
-const movies_1 = require("./api/movies");
-const db_1 = require("./data/db");
+var express =  require('express');
+var cors = require('cors');
+var express = require("express");
+var path = require("path");
+var db_1 = require("./db");
 db_1.default.connect();
-let app = express();
-// uncomment after placing your favicon in /public
-//app.use(favicon('public', 'favicon.ico'));
+const app = express();
+app.use(cors());
 
-app.use('/api', express.static('src/server/api'));
-app.use('/', index_1.default);
-//app.use('/users', users_1.default);
-app.use('/api/movies', movies_1.default);
-app.set('port', (process.env.PORT || 5000));
+app.set('port', (process.env.PORT || 4999));
+
+app.get('/', function(request, response) {
+  response.send('I am the movie App!')
+});
+
+app.get('/users', function(req, res) {
+  // Hard coding for simplicity. Pretend this hits a real database
+  res.json([
+    {"id": 1,"firstName":"Bob","lastName":"Smith","email":"bob@gmail.com"},
+    {"id": 2,"firstName":"Tammy","lastName":"Norton","email":"tnorton@yahoo.com"},
+    {"id": 3,"firstName":"Tina","lastName":"Lee","email":"lee.tina@hotmail.com"}
+  ]);
 });
 
 app.listen(app.get('port'), function() {
