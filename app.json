@@ -1,6 +1,0 @@
-{
-  "name": "Movie API example",
-  "description": "A simple API built in Node and Express hosted on Heroku",
-  "repository": "https://github.com/chadabides/js-deploy-movie-api",
-  "keywords": ["node", "express", "static"]
-}
