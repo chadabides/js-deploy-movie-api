@@ -3,7 +3,6 @@
   "version": "1.0.1",
   "description": "JavaScript deploy api environment starter Kit for Coder Camps. ",
   "scripts": {
-    "prestart": "babel-node buildScripts/startMessage.js",
     "start": "node culster-api-min.js",
     "dev": "babel-node ./src/server/apiserver.js",
     "lint": "esw webpack.config.* src buildScripts --color",
